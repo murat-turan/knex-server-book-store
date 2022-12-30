@@ -1,0 +1,51 @@
+type Book {
+  id: ID!
+  bookName: String
+  authorName: String
+  stock: Int
+  categoryId: Int
+  category: Category
+}
+
+type BookList {
+  books: [Book!]!
+  pagination(pager: PagerInput!, filters: BookFilterInput): Pagination
+}
+
+type AddBookResponse {
+  code: Int!
+  success: Boolean!
+  message: String!
+  book: Book
+}
+
+input BookInput {
+  id: ID
+  bookName: String
+  authorName: String
+  stock: Int
+  category: CategoryInput
+}
+
+input BookFilterInput {
+  bookName: String
+  authorName: String
+  stock: Int
+}
+
+# Queries
+extend type Query {
+  book(id: ID!): Book
+  bookList(pager: PagerInput!, filters: BookFilterInput): BookList
+}
+
+# Mutations
+extend type Mutation {
+  #addBook(id: ID!, bookName: String!, authorName: String, stock: Int): AddBookResponse!
+  saveBook(input: BookInput!): Book!
+  deleteBook(id: ID!): String
+}
+
+extend type Subscription {
+  bookChanged: String
+}

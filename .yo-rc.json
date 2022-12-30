@@ -1,0 +1,16 @@
+{
+  "@totalsoft/generator-graphql-rocket": {
+    "__TIMESTAMP__": "10/25/2022, 4:21:48 PM",
+    "__VERSION__": "1.6.3",
+    "dataLayer": "knex",
+    "withRights": false,
+    "withMultiTenancy": false,
+    "addSubscriptions": false,
+    "addMessaging": false,
+    "addHelm": false,
+    "addVaultConfigs": false,
+    "addTracing": false,
+    "addQuickStart": false,
+    "packageManager": "npm"
+  }
+}

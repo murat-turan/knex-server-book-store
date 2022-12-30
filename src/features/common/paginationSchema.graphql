@@ -1,0 +1,36 @@
+input PagerInput {
+  afterId: ID
+  sortBy: String
+  direction: Int
+  pageSize: Int
+  page: Int
+}
+
+type Page {
+  afterId: ID
+  sortBy: String
+  direction: Int
+  pageSize: Int
+  page: Int
+}
+
+type Pagination {
+  totalCount: Int
+  prevPage: Page
+  nextPage: Page
+}
+
+# input PagerInput {
+#   page: Int!
+#   pageSize: Int!
+# }
+
+# type Page {
+#   page: Int!
+#   pageSize: Int!
+# }
+
+# type Pagination {
+#   currentPage: Page
+#   totalCount: Int
+# }

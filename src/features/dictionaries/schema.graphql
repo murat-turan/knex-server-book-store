@@ -1,0 +1,14 @@
+type Category {
+  id: ID!
+  categoryName: String!
+}
+
+input CategoryInput {
+  id: ID!
+  categoryName: String!
+}
+
+extend type Query {
+  categoryList: [Category!]!
+  categoryById(id: ID!): Category!
+}
